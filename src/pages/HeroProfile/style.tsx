@@ -41,6 +41,7 @@ export const PlusAndMinusBtn = styled.button`
 export const AttributeItemValue = styled.span`
   font-size: 25px;
   margin: 0 20px;
+  width: 30px;
 `;
 
 export const confirmContent = styled.div`  
@@ -58,4 +59,5 @@ export const RemainingPoints = styled.p`
 
 export const confirmBtn = styled.button`
   height: 40px;
+  ${props => props.disabled && `opacity: 0.5`};
 `;
