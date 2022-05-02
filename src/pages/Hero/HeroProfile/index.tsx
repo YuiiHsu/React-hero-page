@@ -1,22 +1,22 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { patchHeroProfile, getHeroProfile } from '../../../apis/hero';
 import { attributesType } from '../type';
 import * as style from './style';
 
-const HeroProfile = () => {
-	const [heroAttributes, setHeroAttributes] = useState<attributesType>({
-		str: 2,
-		int: 7,
-		agi: 9,
-		luk: 7
-	});
+const HeroProfile = (heroId: string) => {
+	const [heroAttributes, setHeroAttributes] = useState<attributesType>({});
 	const [totalPoint, setTotalPoint] = useState<number>(0);
 	const [usedPoint, setUsedPoint] = useState<number>(0);
-
 	const actionType = {
 		plus: "plus",
 		minus: "minus"
 	};
 
+	/**
+	 * 處理加減的動作
+	 * @param key 當前操作的屬性
+	 * @param action 加 / 減
+	 */
 	function handlePlusAndMinus(key: string, action: string) {
 		const attributes = { ...heroAttributes };
 
@@ -49,11 +49,24 @@ const HeroProfile = () => {
 			.reduce((preSum, item) => preSum + item, 0);
 	}
 
+	/**
+	 * 處理點擊儲存按鈕
+	 */
+	function handleConfirm() {
+		patchHeroProfile(heroId[0], heroAttributes)
+			.then(
+
+			);
+	}
+
 	useEffect(() => {
-		const sum = checkCurrentUsedPoint(heroAttributes);
-		setTotalPoint(sum);
-		setUsedPoint(sum);
-	}, []);
+		getHeroProfile(heroId[0]).then(response => {
+			const sum = checkCurrentUsedPoint(response);
+			setTotalPoint(sum);
+			setUsedPoint(sum);
+			setHeroAttributes(response);
+		});
+	}, [heroId]);
 
 	return (
 		<style.Container>
@@ -88,7 +101,9 @@ const HeroProfile = () => {
 				<style.RemainingPoints>
 					剩餘點數: {totalPoint - usedPoint}
 				</style.RemainingPoints>
-				<style.confirmBtn disabled={usedPoint !== totalPoint}>
+				<style.confirmBtn
+					disabled={usedPoint !== totalPoint}
+					onClick={() => handleConfirm()}>
 					儲存
 				</style.confirmBtn>
 			</style.confirmContent>

@@ -42,7 +42,7 @@ const Hero = () => {
 			<style.Content>
 				<HeroList {...heros} />
 				{
-					heroState.openProfilePage && <HeroProfile />
+					heroState.openProfilePage && <HeroProfile {...heroState.heroId} />
 				}
 			</style.Content>
 		</style.Container>
