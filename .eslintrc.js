@@ -21,6 +21,7 @@ module.exports = {
 	],
 	rules: {
 		'semi': [2, 'always'],
+		'quotes': 0,
 		'space-before-function-paren': 0,
 		'indent': 'off',
 		'no-tabs': 0,
