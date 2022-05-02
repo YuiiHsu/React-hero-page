@@ -1,27 +1,15 @@
 # Hero page
 
-<img src="https://drive.google.com/file/d/1_A2VW_R2dHyx0a12UaXCNJ6AXTOdaBGy/view?usp=sharing">
+<img src="https://i.imgur.com/fZFFc9Z.png">
 ## 如何執行
 step 1: clone this repository froom GitHub
 step 2: npm i
 step 3: yarn start
 
+就成功囉!!
+
 ## 架構
-－apis
-	－hero.ts // API 的相關資訊
-	－request.ts // 可在此處做送出 Request 前與收到 Response 後的處理
-－model
-	－reducer.ts // 保管 state，接收到action時, 對 state 做動作的函數
-	－store.tsx // 整合 reducer
-	－type.ts // 定義 redux 的型別
-－pages
-	－Hero
-		－HeroList // 處理 /heroos Page
-		－HeroProfile //處理 /heros/:heroid Page
-			－SettingProfile // 處理能力值加減的地方
-－routes
-	－path.ts // 定義有哪些 Path
-－App.tsx // 定義 Router
+<img src="https://i.imgur.com/OJ7zxhq.png">
 
 ## 第三方套件
 - ESLint（standard）：
@@ -54,4 +42,6 @@ function、Redux 內的 initial state 以及 API 相關會寫註解，
 問題：第一次從頭實做 Redux。
 解法：上網查寫法
 
-## 
+## 之後想優化、修正的地方
+- 做一個 Message Dialog在最上層，API 若有失敗，直接在接到 Response 的時候打開，並顯示訊息。
+- 判斷 TimeOut，提醒使用者 API 可能睡著了，麻煩請等候 30秒左右再嘗試。
