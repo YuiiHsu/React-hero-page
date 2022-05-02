@@ -1,12 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import * as reducer from "../../../model/reducer";
 import { IHero } from '../type';
 import * as style from './style';
+import { stateType } from "model/type";
+import { RootState } from "model/store";
 
 const HeroList = (props: IHero[]) => {
 	const dispatch = useDispatch();
+	const heroState: stateType = useSelector((state: RootState) => state.hero);
 
 	/**
 	 * 處理點擊 Hero Card
@@ -21,14 +24,23 @@ const HeroList = (props: IHero[]) => {
 		<style.Container>
 			{Object.values(props).map(hero => {
 				return (
-					<style.HeroCard
-						key={hero.id}
-						onClick={() => clickHeroCard(hero.id)}>
-						<Link to={hero.id} >
-							<style.HeroImg src={hero.image} alt="Hero Image" />
-							<h3>{hero.name}</h3>
-						</Link>
-					</style.HeroCard>
+					hero.id === heroState.heroId
+						? <style.SelectedHeroCard
+							key={hero.id}
+							onClick={() => clickHeroCard(hero.id)}>
+							<Link to={hero.id} >
+								<style.HeroImg src={hero.image} alt="Hero Image" />
+								<style.HeroName>{hero.name}</style.HeroName>
+							</Link>
+						</style.SelectedHeroCard>
+						: <style.HeroCard
+							key={hero.id}
+							onClick={() => clickHeroCard(hero.id)}>
+							<Link to={hero.id} >
+								<style.HeroImg src={hero.image} alt="Hero Image" />
+								<style.HeroName>{hero.name}</style.HeroName>
+							</Link>
+						</style.HeroCard>
 				);
 			})}
 		</style.Container >

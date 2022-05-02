@@ -3,7 +3,7 @@ import request from './request';
  * 取得 Hero 清單
  */
 export async function getHeros() {
-	return request.get(
+	return await request.get(
 		'/heroes'
 	).then((response) => {
 		return response.data;
@@ -18,7 +18,7 @@ export async function getHeros() {
  * @returns 該 Hero 的屬性表
  */
 export async function getHeroProfile(heroId: string) {
-	return request.get(
+	return await request.get(
 		`/heroes/${heroId}/profile`
 	).then((response) => {
 		return response.data;
@@ -33,7 +33,7 @@ export async function getHeroProfile(heroId: string) {
  * @param params 屬性物件
  */
 export async function patchHeroProfile(heroId: string, params: object) {
-	return request.patch(
+	return await request.patch(
 		`/heroes/${heroId}/profile`,
 		params
 	).then((response) => {

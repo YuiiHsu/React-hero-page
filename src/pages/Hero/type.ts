@@ -8,3 +8,10 @@ export interface attributesType {
 	[key: string]: number
 }
 
+export interface settingProfile {
+	heroAttributes: attributesType,
+	usedPoint: number,
+	totalPoint: number,
+	setUsedPoint: any,
+	setHeroAttributes: any
+}

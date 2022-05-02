@@ -2,13 +2,13 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
   width: 100%;
-  border: 2px solid;
+  border: 3px solid #FFFF00;
   margin-top: 30px;
   display: flex;
+	border-radius: 15px;
 `;
 
 export const Attributes = styled.div`
-  padding: 10%;
   width: 40%;
 `;
 
@@ -54,10 +54,15 @@ export const confirmContent = styled.div`
 `;
 
 export const RemainingPoints = styled.p`
-  font-size: 15px;
+  font-size: 20px;
 `;
 
 export const confirmBtn = styled.button`
   height: 40px;
+	font-size: 15px;
+	color: #00FFBC;
+	background: #211e1e;
+	border-radius: 10px;
+	border: 2px solid #00FFBC;
   ${props => props.disabled && `opacity: 0.5`};
 `;
