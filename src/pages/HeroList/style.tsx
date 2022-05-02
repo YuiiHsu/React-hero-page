@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  width: 100%;
   border: 2px solid black;
   display: flex;
   flex-wrap: wrap;
@@ -20,4 +19,6 @@ export const HeroCard = styled.div`
 export const HeroImg = styled.img`
   margin: 10px;
   border: 2px solid;
+  width: 150px;
+  height: 150px;
 `;

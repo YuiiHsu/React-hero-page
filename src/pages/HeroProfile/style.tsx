@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const Attributes = styled.div`
-  padding: 30px 50px;
+  padding: 10%;
   width: 40%;
 `;
 
@@ -19,13 +19,15 @@ export const AttributeItem = styled.div`
   justify-content space-between;
 `;
 
-export const AttributesTitle = styled.label`
+export const AttributesTitle = styled.div`
   font-size: 25px;
+  display: block;
+  min-width: 60px;
+  color: red;
 `;
 
 export const AdjustContent = styled.div`
   display: flex;
-  border: 2px solid green;
   flex-direction: row;
 `;
 
@@ -41,11 +43,13 @@ export const AttributeItemValue = styled.span`
   margin: 0 20px;
 `;
 
-export const confirmContent = styled.div`
-  padding: 30px 50px;  
+export const confirmContent = styled.div`  
+  margin-bottom: 10%;
   display: flex;
   flex-direction: column;
   justify-content: end;
+  margin-left: 5%;
+  width: 30%;
 `;
 
 export const RemainingPoints = styled.p`
@@ -53,6 +57,5 @@ export const RemainingPoints = styled.p`
 `;
 
 export const confirmBtn = styled.button`
-  width: 150px;
   height: 40px;
 `;

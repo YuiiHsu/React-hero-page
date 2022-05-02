@@ -4,5 +4,11 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 80px 15%;
+`;
+
+export const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-width: 400px;
+  margin-top: 50px;
 `;
