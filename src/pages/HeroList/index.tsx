@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { heroListType } from '../../model/type';
-import { RootState } from '../../model/store';
+import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import * as reducer from "../../model/reducer";
 import { IHero } from './type';
 import * as style from './style';
 
 const HeroList = () => {
-  const heroState = useSelector((state: RootState) => state.hero);
+  const dispatch = useDispatch();
   const [heros, setHeros] = useState<IHero[]>([
     {
       id: '1',
@@ -30,17 +30,24 @@ const HeroList = () => {
     }
   ]);
 
+  function clickHeroCard(heroId: string) {
+    dispatch(reducer.actions.openProfilePage(true));
+    dispatch(reducer.actions.setHeroId(heroId));
+  }
+
   return (
     <style.Container>
       {heros.map(hero => {
         return (
-          <style.HeroCard key={hero.id}>
-            <style.HeroImg src={hero.image} alt="Hero Image" />
-            <h3>{hero.name}</h3>
+          <style.HeroCard key={hero.id} onClick={() => clickHeroCard(hero.id)}>
+            <Link to={hero.id} >
+              <style.HeroImg src={hero.image} alt="Hero Image" />
+              <h3>{hero.name}</h3>
+            </Link>
           </style.HeroCard>
         );
       })}
-    </style.Container>
+    </style.Container >
   );
 };
 

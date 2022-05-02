@@ -1,14 +1,8 @@
-type singoHeroType = {
-	id: number,
-	name: string,
-	image: string
-};
-
-type heroListType = {
-	list: Array<singoHeroType> | null
-};
+type stateType = {
+  openProfilePage: boolean,
+  heroId: string
+}
 
 export type {
-	singoHeroType,
-	heroListType
+  stateType
 };

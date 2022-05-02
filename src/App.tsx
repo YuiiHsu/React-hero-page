@@ -9,8 +9,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={path.heroes} element={<Hero />}></Route>
-        <Route path={path.heroProfile} element={<HeroProfile />}></Route>
+        <Route path={`${path.heroes}/*`} element={<Hero />}></Route>
         <Route path="/" element={<Navigate replace to={path.heroes} />} />
       </Routes>
     </BrowserRouter>
