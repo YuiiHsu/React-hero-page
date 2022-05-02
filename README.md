@@ -13,6 +13,8 @@
 用途：用來管理儲存 React 中的 State，供專案內的檔案操作。
 - Reduxjs Toolkit
 用途：Redux 的 Library，提供一些 API 來更方便的處理 Redux。
+- Axios
+用途：基於 Promise 的 HTTP client library
 - Styled-component： CSS-In-JS Libray
 用途：可以在 JSX 中撰寫 CSS。
 - indent-rainbow: 
