@@ -13,6 +13,8 @@
 用途：用來管理儲存 React 中的 State，供專案內的檔案操作。
 - Reduxjs Toolkit
 用途：Redux 的 Library，提供一些 API 來更方便的處理 Redux。
+- Styled-component： CSS-In-JS Libray
+用途：可以在 JSX 中撰寫 CSS。
 ## 註解原則
 
 ## 遇到的困難、問題與解法
