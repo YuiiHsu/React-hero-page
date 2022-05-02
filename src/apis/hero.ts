@@ -1,4 +1,5 @@
 import request from './request';
+
 /**
  * 取得 Hero 清單
  */
@@ -8,7 +9,7 @@ export async function getHeros() {
 	).then((response) => {
 		return response.data;
 	}).catch(
-		// TODO 錯誤訊息顯示
+		error => alert(error)
 	);
 };
 
@@ -23,7 +24,7 @@ export async function getHeroProfile(heroId: string) {
 	).then((response) => {
 		return response.data;
 	}).catch(
-		// TODO 錯誤訊息顯示
+		error => alert(error)
 	);
 };
 
@@ -39,6 +40,6 @@ export async function patchHeroProfile(heroId: string, params: object) {
 	).then((response) => {
 		return response.data;
 	}).catch(
-		// TODO 錯誤訊息顯示
+		error => alert(error)
 	);
 }

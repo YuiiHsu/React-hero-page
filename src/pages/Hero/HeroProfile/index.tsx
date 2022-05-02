@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { patchHeroProfile, getHeroProfile } from '../../../apis/hero';
 import SettingProfile from './SettingProfile';
 import { attributesType } from '../type';
@@ -24,9 +24,9 @@ const HeroProfile = (heroId: string) => {
 	 */
 	function handleConfirm() {
 		patchHeroProfile(heroId[0], heroAttributes)
-			.then(
-
-			);
+			.then(response =>
+				alert('成功囉!!!!')
+			).catch(error => alert(error));
 	}
 
 	useEffect(() => {

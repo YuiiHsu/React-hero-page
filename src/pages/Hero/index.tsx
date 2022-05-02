@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import HeroList from './HeroList';
 import HeroProfile from './HeroProfile';
-import * as style from './style';
+import { useSelector, useDispatch } from 'react-redux';
+import * as reducer from "../../model/reducer";
 import { RootState } from '../../model/store';
 import { stateType } from 'model/type';
-import { useSelector, useDispatch } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import { path } from '../../routes/path';
-import * as reducer from "../../model/reducer";
-import { IHero } from './type';
 import { getHeros } from '../../apis/hero';
+import { IHero } from './type';
+import * as style from './style';
 
 const Hero = () => {
 	const location = useLocation();

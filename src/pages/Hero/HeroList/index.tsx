@@ -1,11 +1,11 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as reducer from "../../../model/reducer";
 import { IHero } from '../type';
-import * as style from './style';
 import { stateType } from "model/type";
 import { RootState } from "model/store";
+import * as style from './style';
 
 const HeroList = (props: IHero[]) => {
 	const dispatch = useDispatch();

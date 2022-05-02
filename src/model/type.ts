@@ -1,8 +1,8 @@
 type stateType = {
-  openProfilePage: boolean,
-  heroId: string
+	openProfilePage: boolean,
+	heroId: string
 }
 
 export type {
-  stateType
+	stateType
 };
