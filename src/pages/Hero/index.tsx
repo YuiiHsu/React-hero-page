@@ -40,7 +40,9 @@ const Hero = () => {
 	return (
 		<style.Container>
 			<style.Content>
-				<HeroList {...heros} />
+				<HeroList
+					heros={heros}
+					state={heroState} />
 				{
 					heroState.openProfilePage && <HeroProfile {...heroState.heroId} />
 				}

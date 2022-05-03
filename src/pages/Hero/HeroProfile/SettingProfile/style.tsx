@@ -28,7 +28,11 @@ export const PlusAndMinusBtn = styled.button`
 width: 30px;
 height: 30px;
 font-size: 15px;
+font-weight:bold;
+background: #BAC8B9;
 border-radius: 5px;
+border: none;
+color: linear-gradient(to top, #011209, #263238);
 ${props => props.disabled && `opacity: 0.5`};
 `;
 

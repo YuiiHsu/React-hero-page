@@ -2,14 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import * as reducer from "../../../model/reducer";
-import { IHero } from '../type';
+import { heroListInput } from '../type';
 import { stateType } from "model/type";
 import { RootState } from "model/store";
 import * as style from './style';
 
-const HeroList = (props: IHero[]) => {
+const HeroList = (props: heroListInput) => {
 	const dispatch = useDispatch();
-	const heroState: stateType = useSelector((state: RootState) => state.hero);
 
 	/**
 	 * 處理點擊 Hero Card
@@ -22,9 +21,9 @@ const HeroList = (props: IHero[]) => {
 
 	return (
 		<style.Container>
-			{Object.values(props).map(hero => {
+			{Object.values(props.heros).map(hero => {
 				return (
-					hero.id === heroState.heroId
+					hero.id === props.state.heroId
 						? <style.SelectedHeroCard
 							key={hero.id}
 							onClick={() => clickHeroCard(hero.id)}>

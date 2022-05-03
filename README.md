@@ -45,4 +45,4 @@ function、Redux 內的 initial state 以及 API 相關會寫註解，
 
 ## 之後想優化、修正的地方
 - 做一個 Message Dialog在最上層，API 若有失敗，直接在接到 Response 的時候打開，並顯示訊息。
-- 判斷 TimeOut，提醒使用者 API 可能睡著了，麻煩請等候 30秒左右再嘗試。
+- 判斷 API 逾時，提醒使用者 API 可能睡著了，麻煩請等候 30秒左右再嘗試。

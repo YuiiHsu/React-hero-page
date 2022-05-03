@@ -1,3 +1,5 @@
+import { stateType } from "model/type"
+
 export interface IHero {
 	id: string,
 	name: string,
@@ -14,4 +16,9 @@ export interface settingProfile {
 	totalPoint: number,
 	setUsedPoint: any,
 	setHeroAttributes: any
+}
+
+export interface heroListInput {
+	heros: IHero[],
+	state: stateType
 }

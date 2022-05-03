@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
 	border-radius: 15px;
+	background: linear-gradient(to top, #011209, #263238);
 `;
 
 export const HeroCard = styled.div`
