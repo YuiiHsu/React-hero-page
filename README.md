@@ -1,7 +1,6 @@
 # Hero page
 
 <img src="https://i.imgur.com/fZFFc9Z.png">
-<img src="https://i.imgur.com/gNd3gOE.png">
 ## 如何執行
 step 1: clone this repository froom GitHub
 step 2: npm i
