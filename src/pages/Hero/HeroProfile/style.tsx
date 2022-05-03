@@ -6,6 +6,7 @@ export const Container = styled.div`
   margin-top: 30px;
   display: flex;
 	border-radius: 15px;
+	background: linear-gradient(to top, #011209, #263238);
 `;
 
 export const Attributes = styled.div`
